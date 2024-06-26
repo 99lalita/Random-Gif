@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import axios, { Axios } from 'axios';
 
-
-
 const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
 const UseGif = (tag) => {
@@ -20,7 +18,6 @@ const UseGif = (tag) => {
     
     async function fetchData() {
         setLoading(true);
-
         const {data} = await axios.get(tag?(RandomTagurl):(RandomMemeurl));
         const imagesource = data.data.images.downsized_large.url;
         console.log(imagesource);
